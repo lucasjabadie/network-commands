@@ -1,0 +1,27 @@
+! General commands
+get system arp | grep
+get router info routing-table all
+! to see all physical interfaces status, ip add, speed:
+get system interface physical
+! to see arp table:
+diagnose ip arp list
+! to see details from one single interface:
+get hardware nic interface
+! sh runn:
+show/get system global
+! sh ver:
+get system status
+! ha status:
+get system ha status
+set admintimeout
+! change idle timeout timer:
+config system global
+ set admintimeout 30
+
+
+! Packet Capture
+ diagnose sniffer packet <interface><filter><verbose>
+! examples
+diagnose sniffer packet any host x.x.x.x and icmp
+diagnose sniffer packet any host x.x.x.x and port xx or port xx
+diagnose sniffer packet any host x.x.x.x and not port
